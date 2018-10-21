@@ -1,0 +1,27 @@
+{
+	"filetype" : "C74Snapshot",
+	"version" : 2,
+	"minorversion" : 0,
+	"name" : "Big Ben Bell.amxd",
+	"origin" : "Big Ben Bell.amxd",
+	"type" : "amxd",
+	"subtype" : "Undefined",
+	"embed" : 0,
+	"snapshot" : 	{
+		"name" : "Big Ben Bell.amxd",
+		"origname" : "C74:/packages/Max for Live/patchers/Max Instrument/Big Ben Bell/Big Ben Bell.amxd",
+		"valuedictionary" : 		{
+			"parameter_values" : 			{
+				"attack" : 4.999999999999993,
+				"decay" : 60.000000000000007,
+				"harmonic" : 2.0,
+				"level" : -11.301837270341174,
+				"polyphony" : 3.0,
+				"stereo" : 56.99999999999995
+			}
+
+		}
+
+	}
+
+}

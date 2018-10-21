@@ -1,0 +1,37 @@
+{
+	"filetype" : "C74Snapshot",
+	"version" : 2,
+	"minorversion" : 0,
+	"name" : "Chorus x2.amxd",
+	"origin" : "Chorus x2.amxd",
+	"type" : "amxd",
+	"subtype" : "Undefined",
+	"embed" : 0,
+	"snapshot" : 	{
+		"name" : "Chorus x2.amxd",
+		"origname" : "C74:/packages/Max for Live/patchers/Max Audio Effect/Chorus x2/Chorus x2.amxd",
+		"valuedictionary" : 		{
+			"parameter_values" : 			{
+				"delay_H" : 36.0,
+				"delay_L" : 24.0,
+				"depth_H" : 5.0,
+				"depth_L" : 4.9,
+				"fdback_H" : 15.0,
+				"fdback_L" : 5.0,
+				"gain_H" : 0.0,
+				"gain_L" : 50.0,
+				"hi_polarity" : 0.0,
+				"lo_polarity" : 1.0,
+				"mod_L" : 1.0,
+				"mod_rate" : 0.8,
+				"osc_H" : 0.537039,
+				"osc_L" : 0.556987,
+				"wet/dry" : 32.283464566929233,
+				"x-over" : 1764.96062992125826
+			}
+
+		}
+
+	}
+
+}
