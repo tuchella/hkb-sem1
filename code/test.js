@@ -28,8 +28,9 @@ function seqFromPitches(str) {
 	seq.quantizationInfo = {stepsPerQuarter: 4}; 
 	seq.notes = [];
 	var pitches = str.split(" ").map(n => parseInt(n));
-	var stepLength = Math.floor(64 / pitches.length);
-	for(var i = 0; i < pitches.length; i++) {
+	var seqLength = pitches.length > 64 ? 64 : pitches.length;
+	var stepLength = Math.floor(64 / seqLength);
+	for(var i = 0; i < seqLength; i++) {
 		var step = {
 			pitch: pitches[i],
 			quantizedStartStep: i * stepLength,
@@ -44,9 +45,14 @@ function seqFromPitches(str) {
 
 async function compose(primers) {
 	var seqs = await model.interpolate(primers, 5);
-	Max.post(`result ${JSON.stringify(seqs)}`);
+	// reinject primer sequences b/c magenta messes 
+ 	// them up sometimes
+	seqs[0] = primers[0];
+	seqs[4] = primers[1];
+	seqs[20] = primers[2];
+	seqs[24] = primers[3];
+		
 	for (var i = 0; i < seqs.length; i++) {
-		Max.post(`Composed ${JSON.stringify(seqs[i])}`)
 		var pitches = seqs[i].notes.map(step => step.pitch);
 		pitches.unshift("pitch", i);
 		Max.outlet(pitches);
@@ -57,10 +63,14 @@ async function compose(primers) {
 
 Max.addHandler("compose", (a, b, c, d) => {
 	outputAsList("state composing");
-	//outputSeq(left.pitch, 1);
-	var primers = [a, b, c, d].map(p => seqFromPitches(p));
+	// invert b and c because megante orders meledoies like:
+	//		top left > bottm left > top rigth > bottom right
+	// but we order them like:
+	//		top left > top right > bottom left >bottom right
+	//
+	// (which makes much more sense, duh)
+	var primers = [a, c, b, d].map(p => seqFromPitches(p));
 	compose(primers);
-	//outputSeq(right.pitch, 12);
 });
 
 function outputAsList(s) {
