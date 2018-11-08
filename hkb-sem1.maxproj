@@ -2,7 +2,7 @@
 	"name" : "hkb-sem1",
 	"version" : 1,
 	"creationdate" : 3620843429,
-	"modificationdate" : 3623001186,
+	"modificationdate" : 3623793250,
 	"viewrect" : [ 33.0, 76.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -12,8 +12,7 @@
 		"patchers" : 		{
 			"hkb-sem1.maxpat" : 			{
 				"kind" : "patcher",
-				"local" : 1,
-				"toplevel" : 1
+				"local" : 1
 			}
 ,
 			"bell.maxpat" : 			{
@@ -26,12 +25,37 @@
 				"local" : 1
 			}
 ,
+			"pitch_display.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
 			"primers.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
 ,
-			"pitch_display.maxpat" : 			{
+			"fmsynth.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"fmsynth_osc.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"route-env.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"polyr~.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"polys~.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -43,6 +67,10 @@
 				"kind" : "javascript",
 				"local" : 1
 			}
+
+		}
+,
+		"data" : 		{
 
 		}
 ,
