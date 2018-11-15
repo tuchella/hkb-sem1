@@ -2,7 +2,7 @@
 	"name" : "hkb-sem1",
 	"version" : 1,
 	"creationdate" : 3620843429,
-	"modificationdate" : 3623793250,
+	"modificationdate" : 3625075325,
 	"viewrect" : [ 33.0, 76.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -40,6 +40,11 @@
 				"local" : 1
 			}
 ,
+			"polys~.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
 			"fmsynth_osc.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
@@ -55,7 +60,7 @@
 				"local" : 1
 			}
 ,
-			"polys~.maxpat" : 			{
+			"loadmidi.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}

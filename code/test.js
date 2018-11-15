@@ -1,5 +1,5 @@
 const Max = require('max-api');
-
+/*
 // fix b/c there's no window
 global.performance = require('perf_hooks').performance;
 global.fetch = require('node-fetch');
@@ -22,7 +22,7 @@ model.initialize().then(function(m) {
 	Max.post(`Model initialized`);
 	outputAsList("state initialized");
 });
-
+*/
 function seqFromPitches(str) {
 	var seq = {};
 	seq.quantizationInfo = {stepsPerQuarter: 4}; 
@@ -72,6 +72,31 @@ Max.addHandler("compose", (a, b, c, d) => {
 	var primers = [a, c, b, d].map(p => seqFromPitches(p));
 	compose(primers);
 });
+
+Max.addHandler("parse", (a, b, c, d) => {
+	Max.post(`seq  ${JSON.stringify(parseDict(a))}`);
+	Max.post(`seq  ${JSON.stringify(parseDict(b))}`);
+	Max.post(`seq  ${JSON.stringify(parseDict(c))}`);
+	Max.post(`seq  ${JSON.stringify(parseDict(d))}`);
+});
+
+function parseDict(dict) {
+	var seq = {};
+	seq.quantizationInfo = {stepsPerQuarter: 4}; 
+	seq.notes = [];
+	for(var i = 0; i < dict.nstep; i++) {
+		var pitch = dict.pitch[i];
+		if (pitch > 0) {
+			var step = {
+				pitch: pitch,
+				quantizedStartStep: i,
+				quantizedEndStep: i + (dict.duration[i] / dict.interval)
+			};
+			seq.notes.push(step);
+		}
+	}
+	return seq;
+}
 
 function outputAsList(s) {
 	Max.outlet(s.split(" "));
